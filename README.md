@@ -20,4 +20,12 @@ Only 3 bits of output are taken from the adder.Therefore, output is always less 
 The sum output from adder is transferred to parallel-in-parallel-out shift register.output ciuti, a	&I.ferred to parallel in parallel out shim
 register. The output of shift register is '- connected to input of the adder and the decoder IC7445. Shift register copies the sum output when clock input goes from high to low state. This clock input is given using switch S8. The next input data is added with previous data input.
 
+![image](https://user-images.githubusercontent.com/91731751/166444869-39154744-b74e-4a7a-9a47-b7d3c1a8b2c4.png)
+
+![image](https://user-images.githubusercontent.com/91731751/166444961-86bfd966-4313-4a1e-8314-c027448577d0.png)
+
+Decoder converts the binary to respective decimal equivalent and corresponding LED glows indicating the day.
+Priority encoder produces 4-bit BCD for corresponding decimal input but actually one's complement of input is generated. In this particular circuit only 3-bit output is needed hence input switches can be selected so as to get the necessary output.Owing to switch debounce problem, in clock input, a switch debouncer using NAND gate is used between switch S8 and clock input of shift register.
+
+
 
