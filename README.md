@@ -18,7 +18,7 @@ Their codes are convertd into binary equivalents by encoder.
 Adder adds the binary input from encoder with the contents of shift regis¬ter (initially 0). If the sum exceeds 7,then 7 should be subtracted from the sum.This can be easily done by connectin MSB of sum(pin 15 of IC2) to carry-in input(pin 13 of IC2).MSB is 1 for sum>7 and hence 1 is added to the output of sum.
 Only 3 bits of output are taken from the adder.Therefore, output is always less or equal to 7.
 The sum output from adder is transferred to parallel-in-parallel-out shift register.output ciuti, a	&I.ferred to parallel in parallel out shim
-register. The output of shift register is '- connected to input of the adder and the decoder IC7445. Shift register copies the sum output when clock input goes from high to low state. This clock input is given using switch S8. The next input data is added with previous data input.
+register. The output of shift register is connected to input of the adder and the decoder IC7445. Shift register copies the sum output when clock input goes from high to low state. This clock input is given using switch S8. The next input data is added with previous data input.
 
 ![image](https://user-images.githubusercontent.com/91731751/166444869-39154744-b74e-4a7a-9a47-b7d3c1a8b2c4.png)
 
@@ -26,6 +26,27 @@ register. The output of shift register is '- connected to input of the adder and
 
 Decoder converts the binary to respective decimal equivalent and corresponding LED glows indicating the day.
 Priority encoder produces 4-bit BCD for corresponding decimal input but actually one's complement of input is generated. In this particular circuit only 3-bit output is needed hence input switches can be selected so as to get the necessary output.Owing to switch debounce problem, in clock input, a switch debouncer using NAND gate is used between switch S8 and clock input of shift register.
+
+PRINCIPLE:
+
+Basically the circuit performs only addition and it is possible to find out day by adding codes for year, month and date. Code for year is given in 
+Table I. Codes for month and date are given in Table III. Foe example, consider a date 27/1/1971. To find the day on this date, find out the code for the year 1971 from Table I.Code for year is D, which is equal to S (from Table II). Code for the month January is 1 and for date 27, it is 5 (Table II). Sum of all these codes is equal to 11. Since 11 is greater than 7 (total no. of week days), subtract 7 from 11. We get 4, which in¬dicates that LED4 is glowing which stands for Wednesday (Table IV).
+
+WORKING:
+
+To find out the day for any date, codes for year, month and date are entered one by one.
+The circuit is reset by pressing the reset switch momentarily. Then find out the code (A-G) for particular year from the Table I. Switch in correspond¬ing to the code is pressed, then enter key (S8) is pressed.All the switchs are then restored to normal position. Now the circuit is ready to accept next data (i.e,month).Code for the month is - given in Table III. Switch to be pressed for a particular month is given in Table II. Switch corresponding to the morn., is pressed followed by enter key (s8). In the same way, date is entered.The glowing LED indicates the day after the date has been entered. To enter the date 27-01-1971 following sequence of switches will be pressed.
+
+For year 1971, code is D (from Table I). To enter D, press switch S5. Then press enter key S8. Restore switches S5 and S8 to normal position. For month, refer Table II. For January, switch Si is pressed and then enter key, S8 is pressed. Switches S1 and S8 are restored to normal position.To enter the date 27 refer Table II.For 27,press witch S5 and then S8.Now restore switches S5 and S8 to normal position.
+
+The LED corresponding to wednesdat starts glowing. The circuit must be reset before entering next date.Therefore, for the date 27/01/1971 ,sequence of keys are S5,S8,S1,S8,S5 and S8.
+
+
+
+
+
+
+
 
 
 
