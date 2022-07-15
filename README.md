@@ -1,7 +1,7 @@
 # Day_Date_Computer
 With the circuit described here one can easily find out the day for any date within 1901 to 2000 AD.
 
-This circuit is basically an adder, built around 1C7483 (adder), 1C74195 (shift register) and IC74147 (priority encoder). IC7445 is used for input and output.
+This circuit is basically an adder, built around IC7483 (adder), IC74195 (shift register) and IC74147 (priority encoder). IC7445 is used for input and output.
 
 CIRCUIT DESCRIPTION:
 
